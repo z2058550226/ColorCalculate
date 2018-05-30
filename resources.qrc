@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/icon">
+        <file>izumikonata.jpg</file>
+        <file>hiiragitsukasa.png</file>
+    </qresource>
+</RCC>
