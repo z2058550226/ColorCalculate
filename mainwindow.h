@@ -38,7 +38,7 @@ private:
     int greenValue = 255;
     int blueValue = 255;
 
-    void invalidateIvBackGround();
+    void invalidateColorResult();
 };
 
 #endif // MAINWINDOW_H

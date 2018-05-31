@@ -15,7 +15,9 @@ MainWindow::MainWindow(QWidget *parent) :
     QValidator *validatorRed = new QRegExpValidator(regx, ui->et_red);
     ui->et_red->setValidator(validatorRed);
     ui->ivColor->setAutoFillBackground(true);
-    invalidateIvBackGround();
+    ui->lb_color->setAlignment(Qt::AlignHCenter);
+    ui->layoutRight->setAlignment(Qt::AlignHCenter);
+    invalidateColorResult();
 }
 
 MainWindow::~MainWindow()
@@ -23,12 +25,13 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::invalidateIvBackGround(){
+void MainWindow::invalidateColorResult(){
     QPalette pal(ui->ivColor->palette());
     QColor color;
     color.setRgb(this->redValue,this->greenValue,this->blueValue);
     pal.setColor(QPalette::Background,color);
     ui->ivColor->setPalette(pal);
+    ui->lb_color->setText(color.name());
 }
 
 void MainWindow::on_btnCopy_clicked()
@@ -63,7 +66,7 @@ void MainWindow::on_et_red_textChanged(const QString &arg1)
             this->redValue=0;
         }
     }
-    invalidateIvBackGround();
+    invalidateColorResult();
 }
 
 void MainWindow::on_et_green_textChanged(const QString &arg1)
@@ -79,7 +82,7 @@ void MainWindow::on_et_green_textChanged(const QString &arg1)
             this->greenValue=0;
         }
     }
-    invalidateIvBackGround();
+    invalidateColorResult();
 }
 
 void MainWindow::on_et_blue_textChanged(const QString &arg1)
@@ -95,7 +98,7 @@ void MainWindow::on_et_blue_textChanged(const QString &arg1)
             this->blueValue=0;
         }
     }
-    invalidateIvBackGround();
+    invalidateColorResult();
 }
 
 void MainWindow::keyPressEvent(QKeyEvent *event){
