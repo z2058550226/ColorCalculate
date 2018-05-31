@@ -6,6 +6,7 @@
 #include <QDebug>
 #include <QColor>
 #include <QMessageBox>
+#include <QKeyEvent>
 
 namespace Ui {
 class MainWindow;
@@ -27,6 +28,8 @@ private slots:
     void on_et_green_textChanged(const QString &arg1);
 
     void on_et_blue_textChanged(const QString &arg1);
+
+    void keyPressEvent(QKeyEvent * event);
 
 private:
     Ui::MainWindow *ui;

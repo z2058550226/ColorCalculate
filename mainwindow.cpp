@@ -97,3 +97,15 @@ void MainWindow::on_et_blue_textChanged(const QString &arg1)
     }
     invalidateIvBackGround();
 }
+
+void MainWindow::keyPressEvent(QKeyEvent *event){
+
+    if (event->key() == Qt::Key_Enter)
+    {
+        on_btnCopy_clicked();
+    }
+    if(event->key() == Qt::Key_Return)
+    {
+        on_btnCopy_clicked();
+    }
+}
